@@ -88,24 +88,23 @@ const signup = async (req, res) => {
 };
 const login = async (req, res) => {
   try {
-    const {email , password} = req.body;
-    const userObj = {email , password};
-   const user =  await userModel.findOne({email , password});
-   if(user){
-    const token =  jwt.sign(userObj , process.env.secret , {expiresIn:'1h'}); 
-    res.json({
-      mssg:'user logged successfully',
-      token:token
-    });
-   }
-   else {
-    res.send('user not present');
-   }
+    const { email, password } = req.body;
+    const userObj = { email, password };
+    const user = await userModel.findOne({ email, password });
+    if (user) {
+      const token = jwt.sign(userObj, process.env.secret, { expiresIn: "1h" });
+      res.json({
+        mssg: "user logged successfully",
+        token: token,
+      });
+    } else {
+      res.send("user not present");
+    }
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Internal Server Error" });
   }
-}
+};
 module.exports = {
   getSpecificUrl,
   createUrl,
