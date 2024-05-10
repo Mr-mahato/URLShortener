@@ -38,10 +38,7 @@ export default function Login() {
   };
 
   return (
-    <div
-      className="h-screen flex justify-center bg-[#ECECEC] flex-col items-center px-20 bg-cover"
-      
-    >
+    <div className="h-screen flex justify-center bg-[#ECECEC] flex-col items-center px-20 bg-cover">
       <div className="bg-white p-6 rounded-lg w-1/3 ">
         <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
         <form onSubmit={handleSubmit}>
@@ -86,10 +83,7 @@ export default function Login() {
         </form>
         <div className="flex justify-center my-4">
           <span className="text-gray-600 mx-2">Don't have an account:</span>
-          <Link
-            to={"/signup"}
-            className=" hover:text-blue-800 ml-4"
-          >
+          <Link to={"/signup"} className=" hover:text-blue-800 ml-4">
             Register
           </Link>
         </div>
